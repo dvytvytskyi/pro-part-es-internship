@@ -1,0 +1,70 @@
+{
+  "common": {
+    "language": "Язык",
+    "search": "Поиск",
+    "filter": "Фильтр",
+    "apply": "Применить",
+    "reset": "Сбросить",
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "noResults": "Результаты не найдены",
+    "back": "Назад",
+    "next": "Далее",
+    "previous": "Предыдущий"
+  },
+  "navigation": {
+    "home": "Главная",
+    "newBuilding": "Новостройки",
+    "secondary": "Вторичка",
+    "rent": "Аренда",
+    "map": "Карта",
+    "areas": "Районы",
+    "consulting": "Консультации",
+    "blog": "Блог"
+  },
+  "header": {
+    "callUs": "Позвоните нам",
+    "favorites": "Избранное"
+  },
+  "home": {
+    "title": "Добро пожаловать в Агентство Недвижимости",
+    "subtitle": "Найдите недвижимость своей мечты",
+    "searchPlaceholder": "Поиск недвижимости...",
+    "featuredProperties": "Рекомендуемые объекты"
+  },
+  "properties": {
+    "title": "Вся недвижимость",
+    "filters": {
+      "type": "Тип недвижимости",
+      "price": "Ценовой диапазон",
+      "location": "Местоположение",
+      "bedrooms": "Спальни",
+      "bathrooms": "Ванные комнаты"
+    },
+    "types": {
+      "apartment": "Квартира",
+      "house": "Дом",
+      "villa": "Вилла",
+      "commercial": "Коммерческая"
+    }
+  },
+  "property": {
+    "details": "Детали объекта",
+    "price": "Цена",
+    "location": "Местоположение",
+    "bedrooms": "Спальни",
+    "bathrooms": "Ванные комнаты",
+    "area": "Площадь",
+    "description": "Описание",
+    "features": "Особенности",
+    "contactAgent": "Связаться с агентом"
+  },
+  "admin": {
+    "title": "Панель администратора",
+    "properties": "Недвижимость",
+    "addProperty": "Добавить объект",
+    "editProperty": "Редактировать объект",
+    "deleteProperty": "Удалить объект"
+  }
+}
+

@@ -1,0 +1,70 @@
+{
+  "common": {
+    "language": "Language",
+    "search": "Search",
+    "filter": "Filter",
+    "apply": "Apply",
+    "reset": "Reset",
+    "loading": "Loading...",
+    "error": "Error",
+    "noResults": "No results found",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "navigation": {
+    "home": "Home",
+    "newBuilding": "New building",
+    "secondary": "Secondary",
+    "rent": "Rent",
+    "map": "Map",
+    "areas": "Areas",
+    "consulting": "Consulting",
+    "blog": "Blog"
+  },
+  "header": {
+    "callUs": "Call Us",
+    "favorites": "Favorites"
+  },
+  "home": {
+    "title": "Welcome to Real Estate Agency",
+    "subtitle": "Find your dream property",
+    "searchPlaceholder": "Search properties...",
+    "featuredProperties": "Featured Properties"
+  },
+  "properties": {
+    "title": "All Properties",
+    "filters": {
+      "type": "Property Type",
+      "price": "Price Range",
+      "location": "Location",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms"
+    },
+    "types": {
+      "apartment": "Apartment",
+      "house": "House",
+      "villa": "Villa",
+      "commercial": "Commercial"
+    }
+  },
+  "property": {
+    "details": "Property Details",
+    "price": "Price",
+    "location": "Location",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "area": "Area",
+    "description": "Description",
+    "features": "Features",
+    "contactAgent": "Contact Agent"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "properties": "Properties",
+    "addProperty": "Add Property",
+    "editProperty": "Edit Property",
+    "deleteProperty": "Delete Property"
+  }
+}
+
