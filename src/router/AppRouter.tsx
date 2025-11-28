@@ -3,6 +3,7 @@ import { Layout } from '@/components/layout/Layout'
 import { HeroSection } from '@/components/common/HeroSection'
 import { AboutUs } from '@/components/common/AboutUs'
 import { OurService } from '@/components/common/OurService'
+import { Areas } from '@/components/common/Areas'
 
 // Pages will be created here when needed
 // import { HomePage } from '@/pages/HomePage'
@@ -21,6 +22,7 @@ export const AppRouter = () => {
               <HeroSection />
               <AboutUs />
               <OurService />
+              <Areas />
             </>
           }
         />

@@ -118,9 +118,21 @@ export const Header = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="21" stroke="#333" strokeWidth="2" fill="none"/>
+            {!isMenuOpen ? (
+              <>
+                <line x1="14" y1="16" x2="30" y2="16" stroke="#333" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="14" y1="22" x2="30" y2="22" stroke="#333" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="14" y1="28" x2="30" y2="28" stroke="#333" strokeWidth="2" strokeLinecap="round"/>
+              </>
+            ) : (
+              <>
+                <line x1="16" y1="16" x2="28" y2="28" stroke="#333" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="28" y1="16" x2="16" y2="28" stroke="#333" strokeWidth="2" strokeLinecap="round"/>
+              </>
+            )}
+          </svg>
         </button>
       </div>
     </header>

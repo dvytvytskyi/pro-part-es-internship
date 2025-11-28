@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import './OurService.scss'
 
@@ -13,6 +13,24 @@ interface Service {
 export const OurService = () => {
   const { t } = useTranslation()
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const touchTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleTouchStart = (index: number) => {
+    // Очищаємо попередній таймер, якщо він є
+    if (touchTimeoutRef.current) {
+      clearTimeout(touchTimeoutRef.current)
+      touchTimeoutRef.current = null
+    }
+    setHoveredIndex(index)
+  }
+
+  const handleTouchEnd = () => {
+    // Затримка перед приховуванням для кращої UX на мобільних
+    touchTimeoutRef.current = setTimeout(() => {
+      setHoveredIndex(null)
+      touchTimeoutRef.current = null
+    }, 500)
+  }
 
   const services: Service[] = [
     {
@@ -47,8 +65,29 @@ export const OurService = () => {
               <div key={service.id}>
                 <div
                   className={`our-service__card ${hoveredIndex === index ? 'our-service__card--hovered' : ''}`}
-                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseEnter={() => {
+                    if (touchTimeoutRef.current) {
+                      clearTimeout(touchTimeoutRef.current)
+                      touchTimeoutRef.current = null
+                    }
+                    setHoveredIndex(index)
+                  }}
                   onMouseLeave={() => setHoveredIndex(null)}
+                  onTouchStart={(e) => {
+                    e.stopPropagation()
+                    handleTouchStart(index)
+                  }}
+                  onTouchEnd={(e) => {
+                    e.stopPropagation()
+                    handleTouchEnd()
+                  }}
+                  onTouchCancel={() => {
+                    if (touchTimeoutRef.current) {
+                      clearTimeout(touchTimeoutRef.current)
+                      touchTimeoutRef.current = null
+                    }
+                    setHoveredIndex(null)
+                  }}
                   onFocus={() => setHoveredIndex(index)}
                   onBlur={() => setHoveredIndex(null)}
                   tabIndex={0}
