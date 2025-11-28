@@ -19,6 +19,7 @@
     opacity: 0.03;
     z-index: 0;
     pointer-events: none;
+    display: none; // Приховано на desktop
   }
 
   &__container {
@@ -165,6 +166,10 @@
   @media (max-width: 768px) {
     padding-top: 2rem;
     margin-top: 15px;
+
+    &::before {
+      display: block; // Показуємо лого тільки на мобільних
+    }
 
     &__content {
       padding: 0 24px;
