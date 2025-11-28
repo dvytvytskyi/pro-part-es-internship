@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { Layout } from '@/components/layout/Layout'
+import { Header } from '@/components/layout/Header'
 import { HeroSection } from '@/components/common/HeroSection'
+import { BottomNav } from '@/components/common/BottomNav'
 import { AboutUs } from '@/components/common/AboutUs'
 import { OurService } from '@/components/common/OurService'
 import { Areas } from '@/components/common/Areas'
@@ -22,13 +24,19 @@ export const AppRouter = () => {
           path="/"
           element={
             <>
-              <HeroSection />
-              <AboutUs />
-              <OurService />
-              <Areas />
-              <MainPageMapContainer />
-              <LegalBlock />
-              <ConsultationForm />
+              <div className="layout__header-hero-wrapper">
+                <Header />
+                <HeroSection />
+              </div>
+              <main className="layout__main">
+                <BottomNav />
+                <AboutUs />
+                <OurService />
+                <Areas />
+                <MainPageMapContainer />
+                <LegalBlock />
+                <ConsultationForm />
+              </main>
             </>
           }
         />

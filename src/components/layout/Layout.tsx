@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import { Header } from './Header'
 import { Footer } from './Footer'
 import './Layout.scss'
 
@@ -10,10 +9,7 @@ interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="layout">
-      <Header />
-      <main className="layout__main">
-        {children}
-      </main>
+      {children}
       <Footer />
     </div>
   )

@@ -1,0 +1,2 @@
+export { HeroSearchForm } from './HeroSearchForm'
+

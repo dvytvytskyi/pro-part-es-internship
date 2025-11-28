@@ -7,6 +7,16 @@
   overflow-x: hidden;
   box-sizing: border-box;
 
+  &__header-hero-wrapper {
+    background-image: url('https://migrant.biz.ua/wp-content/uploads/2019/03/kak-kupit-nedvizhimost-v-ispanii2.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   &__main {
     flex: 1;
     width: 100%;

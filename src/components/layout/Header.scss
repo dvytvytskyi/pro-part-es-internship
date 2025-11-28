@@ -29,7 +29,7 @@
   }
 
   &__logo-image {
-    height: 55px;
+    height: 60.5px;
     width: auto;
     display: block;
   }
@@ -103,13 +103,13 @@
   &__call-button {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 18px 40px;
+    gap: 0.972rem;
+    padding: 18.6624px 41.472px;
     background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 40px;
-    font-size: 1rem; // 16px
+    border-radius: 51.84px;
+    font-size: 1.1664rem; // 18.6624px
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -117,8 +117,8 @@
 
     svg {
       flex-shrink: 0;
-      width: 20px;
-      height: 20px;
+      width: 23.328px;
+      height: 23.328px;
       transition: transform 0.3s ease;
     }
 
@@ -276,13 +276,11 @@
     padding: 1.5rem 0;
 
     &__container {
-      max-width: 1440px;
-      padding: 0 80px;
       gap: 4rem;
     }
 
     &__logo-image {
-      height: 50px;
+      height: 55px;
     }
 
     &__nav {
@@ -297,8 +295,8 @@
     }
 
     &__call-button {
-      padding: 14px 32px;
-      font-size: 0.9375rem;
+      padding: 14.5152px 33.1776px;
+      font-size: 1.134rem;
     }
 
     &__favorite-button {
@@ -532,13 +530,11 @@
     padding: 1.5rem 0;
 
     &__container {
-      max-width: 1440px;
-      padding: 0 80px;
       gap: 4rem;
     }
 
     &__logo-image {
-      height: 50px;
+      height: 55px;
     }
 
     &__nav {
@@ -553,8 +549,8 @@
     }
 
     &__call-button {
-      padding: 14px 32px;
-      font-size: 0.9375rem;
+      padding: 14.5152px 33.1776px;
+      font-size: 1.134rem;
     }
 
     &__favorite-button {
@@ -739,7 +735,7 @@
     }
 
     &__logo-image {
-      height: 32px;
+      height: 35.2px;
     }
 
     &__burger {
@@ -797,7 +793,7 @@
     }
 
     &__logo-image {
-      height: 32px;
+      height: 35.2px;
     }
 
     &__burger {
