@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { LanguageSwitcher } from '@/components/common/LanguageSwitcher'
@@ -6,6 +7,7 @@ import './Header.scss'
 export const Header = () => {
   const { t } = useTranslation()
   const location = useLocation()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <header className="header">
@@ -14,11 +16,28 @@ export const Header = () => {
           <img 
             src="https://pro-part.es/wp-content/themes/propart-spain/icons/shared/logo.svg" 
             alt="PRO PART" 
-            className="header__logo-image"
+            className="header__logo-image header__logo-image--desktop"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement
+              target.style.display = 'none'
+              const parent = target.parentElement
+              if (parent) {
+                parent.innerHTML = '<span style="font-size: 1.5rem; font-weight: 700; color: #333;">PRO PART</span>'
+              }
+            }}
+          />
+          <img 
+            src="https://pro-part.es/wp-content/themes/propart-spain/icons/shared/logomob.svg" 
+            alt="PRO PART" 
+            className="header__logo-image header__logo-image--mobile"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement
+              target.style.display = 'none'
+            }}
           />
         </Link>
         
-        <nav className="header__nav">
+        <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
           <Link 
             to="/" 
             className={`header__nav-link ${location.pathname === '/' ? 'header__nav-link--active' : ''}`}
@@ -71,8 +90,8 @@ export const Header = () => {
 
         <div className="header__actions">
           <button className="header__call-button">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.654 1.927a.667.667 0 0 0-.927.18L1.18 4.447a.667.667 0 0 0 .18.927c.86.646 1.82 1.393 2.86 2.206.34.26.72.54 1.14.84.42.3.86.6 1.32.9.46.3.92.58 1.38.84.46.26.9.5 1.32.7.42.2.82.36 1.18.48.36.12.66.2.9.24.24.04.42.06.54.06.12 0 .2-.02.24-.06.04-.04.06-.12.06-.24v-2.34a.667.667 0 0 1 .2-.48l2-2a.667.667 0 0 1 .94 0l4.66 4.66a.667.667 0 0 1 0 .94l-2 2a.667.667 0 0 1-.48.2h-2.34a.667.667 0 0 0-.24.06c-.04.04-.06.12-.06.24 0 .12.02.2.06.24.04.04.12.06.24.06.12 0 .3-.02.54-.06.24-.04.54-.12.9-.24.36-.12.76-.28 1.18-.48.42-.2.86-.44 1.32-.7.46-.26.92-.54 1.38-.84.46-.3.9-.6 1.32-.9.42-.3.8-.58 1.14-.84 1.04-.813 2-1.56 2.86-2.206a.667.667 0 0 0 .18-.927L13.273 1.107a.667.667 0 0 0-.927-.18c-.86.646-1.82 1.393-2.86 2.206-.34.26-.72.54-1.14.84-.42.3-.86.6-1.32.9-.46.3-.92.58-1.38.84-.46.26-.9.5-1.32.7-.42.2-.82.36-1.18.48-.36.12-.66.2-.9.24-.24.04-.42.06-.54.06-.12 0-.2-.02-.24-.06-.04-.04-.06-.12-.06-.24 0-.12.02-.2.06-.24.04-.04.12-.06.24-.06.12 0 .3.02.54.06.24.04.54.12.9.24.36.12.76.28 1.18.48.42.2.86.44 1.32.7.46.26.92.54 1.38.84.46.3.9.6 1.32.9.42.3.8.58 1.14.84 1.04.813 2 1.56 2.86 2.206z" fill="white"/>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
             </svg>
             <span>{t('header.callUs')}</span>
           </button>
@@ -85,6 +104,16 @@ export const Header = () => {
 
           <LanguageSwitcher />
         </div>
+
+        <button 
+          className={`header__burger ${isMenuOpen ? 'header__burger--open' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
   )
