@@ -41,48 +41,56 @@ export const Header = () => {
           <Link 
             to="/" 
             className={`header__nav-link ${location.pathname === '/' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMenuOpen(false)}
           >
             {t('navigation.home')}
           </Link>
           <Link 
             to="/new-building" 
             className={`header__nav-link ${location.pathname === '/new-building' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMenuOpen(false)}
           >
             {t('navigation.newBuilding')}
           </Link>
           <Link 
             to="/secondary" 
             className={`header__nav-link ${location.pathname === '/secondary' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMenuOpen(false)}
           >
             {t('navigation.secondary')}
           </Link>
           <Link 
             to="/rent" 
             className={`header__nav-link ${location.pathname === '/rent' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMenuOpen(false)}
           >
             {t('navigation.rent')}
           </Link>
           <Link 
             to="/map" 
             className={`header__nav-link ${location.pathname === '/map' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMenuOpen(false)}
           >
             {t('navigation.map')}
           </Link>
           <Link 
             to="/areas" 
             className={`header__nav-link ${location.pathname === '/areas' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMenuOpen(false)}
           >
             {t('navigation.areas')}
           </Link>
           <Link 
             to="/consulting" 
             className={`header__nav-link ${location.pathname === '/consulting' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMenuOpen(false)}
           >
             {t('navigation.consulting')}
           </Link>
           <Link 
             to="/blog" 
             className={`header__nav-link ${location.pathname === '/blog' ? 'header__nav-link--active' : ''}`}
+            onClick={() => setIsMenuOpen(false)}
           >
             {t('navigation.blog')}
           </Link>
