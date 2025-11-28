@@ -1,0 +1,201 @@
+.consultation-form {
+  padding: 0;
+  margin-bottom: 50px;
+  background-color: #f5f5f5;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    max-width: 600px;
+    width: 100%;
+    padding: 80px 24px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+    text-align: center;
+    font-family: Onest, sans-serif;
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+    margin: 0 0 32px 0;
+    line-height: 1.6;
+    text-align: center;
+    font-family: Onest, sans-serif;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    font-family: Onest, sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #fff;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: 16px 24px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Onest, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #444;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &__disclaimer {
+    font-size: 12px;
+    font-weight: 400;
+    color: #999;
+    margin: 0;
+    line-height: 1.5;
+    text-align: center;
+    font-family: Onest, sans-serif;
+  }
+
+  &__link {
+    color: #666;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #333;
+    }
+  }
+
+  // Tablet (iPad Pro Portrait, iPad Air Portrait)
+  @media (max-width: 1024px) and (orientation: portrait) {
+    &__container {
+      padding: 60px 24px;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__description {
+      font-size: 15px;
+    }
+  }
+
+  // Tablet Landscape (iPad Pro Landscape, iPad Air Landscape)
+  @media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
+    &__container {
+      padding: 60px 24px;
+    }
+  }
+
+  // Mobile (iPhone)
+  @media (max-width: 768px) {
+    &__container {
+      padding: 40px 20px;
+    }
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    &__description {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    &__form {
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    &__input {
+      padding: 14px 18px;
+      font-size: 15px;
+    }
+
+    &__button {
+      padding: 14px 28px;
+      font-size: 15px;
+    }
+
+    &__disclaimer {
+      font-size: 11px;
+    }
+  }
+
+  // Small Mobile
+  @media (max-width: 480px) {
+    &__container {
+      padding: 30px 16px;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+
+    &__description {
+      font-size: 13px;
+    }
+
+    &__input {
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+
+    &__button {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+  }
+}
+

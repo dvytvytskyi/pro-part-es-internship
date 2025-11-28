@@ -1,0 +1,2 @@
+export { MainPageMapContainer } from './MainPageMapContainer'
+

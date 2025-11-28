@@ -4,6 +4,9 @@ import { HeroSection } from '@/components/common/HeroSection'
 import { AboutUs } from '@/components/common/AboutUs'
 import { OurService } from '@/components/common/OurService'
 import { Areas } from '@/components/common/Areas'
+import { MainPageMapContainer } from '@/components/common/MainPageMapContainer'
+import { LegalBlock } from '@/components/common/LegalBlock'
+import { ConsultationForm } from '@/components/common/ConsultationForm'
 
 // Pages will be created here when needed
 // import { HomePage } from '@/pages/HomePage'
@@ -23,6 +26,9 @@ export const AppRouter = () => {
               <AboutUs />
               <OurService />
               <Areas />
+              <MainPageMapContainer />
+              <LegalBlock />
+              <ConsultationForm />
             </>
           }
         />

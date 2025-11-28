@@ -1,13 +1,13 @@
 .areas-wrapper {
-  padding: 4rem 0 5rem 0;
-  margin-top: 160px;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 50px;
   background-color: #f5f5f5;
   position: relative;
   overflow: hidden;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-
 
   &__container {
     margin: 0 auto;
@@ -16,6 +16,7 @@
     z-index: 1;
     width: 100%;
     box-sizing: border-box;
+    max-width: 100%;
   }
 
   &__header {
@@ -24,11 +25,13 @@
     width: 100%;
     gap: 5rem;
     align-items: flex-start;
+    flex-wrap: wrap;
   }
 
   &__left {
     width: 60%;
     flex-shrink: 0;
+    min-width: 0;
   }
 
   &__right {
@@ -36,6 +39,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    min-width: 0;
   }
 
   &__title {
@@ -45,6 +49,8 @@
     margin: 0 0 1.5rem 0;
     line-height: 1.2;
     font-family: inherit;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   &__description {
@@ -54,6 +60,8 @@
     margin: 0;
     line-height: 22px;
     font-family: Onest, sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   &__right-title {
@@ -64,6 +72,94 @@
     line-height: 1;
     font-family: inherit;
     white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__search {
+    margin-bottom: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__search-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__select-wrapper {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+  }
+
+  &__select {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px 8px;
+    padding-right: 2.5rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #333;
+    }
+
+    &:hover {
+      border-color: #999;
+    }
+  }
+
+  &__search-button,
+  &__map-button {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    box-sizing: border-box;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+    }
+
+    &:hover {
+      background-color: #555;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
   }
 
   &__cards {
@@ -72,6 +168,7 @@
     grid-template-rows: auto auto;
     gap: 1.5rem;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
 
     .areas-card--center {
@@ -86,6 +183,7 @@
   overflow: hidden;
   aspect-ratio: 4 / 3;
   width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -102,6 +200,7 @@
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
+  max-width: 100%;
 
   .areas-card:hover & {
     transform: scale(1.05);
@@ -130,6 +229,8 @@
   font-family: inherit;
   z-index: 2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 // --------------------------------------------------
@@ -137,12 +238,9 @@
 // --------------------------------------------------
 @media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
   .areas-wrapper {
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-
-    &::before {
-      font-size: 12vw;
-    }
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
 
     &__container {
       padding: 0 40px;
@@ -150,6 +248,7 @@
 
     &__header {
       margin-bottom: 2.5rem;
+      gap: 3rem;
     }
 
     &__title {
@@ -158,6 +257,14 @@
 
     &__description {
       font-size: 0.9375rem;
+    }
+
+    &__right-title {
+      font-size: 10vw;
+    }
+
+    &__search {
+      margin-bottom: 2.5rem;
     }
 
     &__cards {
@@ -177,13 +284,9 @@
 // --------------------------------------------------
 @media (max-width: 1024px) and (orientation: portrait) {
   .areas-wrapper {
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-
-    &::before {
-      font-size: 10vw;
-      right: -5%;
-    }
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
 
     &__container {
       padding: 0 32px;
@@ -191,6 +294,20 @@
 
     &__header {
       margin-bottom: 2.5rem;
+      gap: 3rem;
+      flex-direction: column;
+    }
+
+    &__left {
+      width: 100%;
+    }
+
+    &__right {
+      width: 100%;
+    }
+
+    &__right-title {
+      font-size: 8vw;
     }
 
     &__title {
@@ -198,6 +315,18 @@
     }
 
     &__description {
+      font-size: 0.9375rem;
+    }
+
+    &__search {
+      margin-bottom: 2.5rem;
+    }
+
+    &__search-controls {
+      gap: 0.875rem;
+    }
+
+    &__select {
       font-size: 0.9375rem;
     }
 
@@ -219,12 +348,9 @@
 // --------------------------------------------------
 @media (min-width: 820px) and (max-width: 1180px) and (orientation: landscape) {
   .areas-wrapper {
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-
-    &::before {
-      font-size: 11vw;
-    }
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
 
     &__container {
       padding: 0 32px;
@@ -232,6 +358,7 @@
 
     &__header {
       margin-bottom: 2.5rem;
+      gap: 3rem;
     }
 
     &__title {
@@ -240,6 +367,14 @@
 
     &__description {
       font-size: 0.9375rem;
+    }
+
+    &__right-title {
+      font-size: 9vw;
+    }
+
+    &__search {
+      margin-bottom: 2.5rem;
     }
 
     &__cards {
@@ -259,13 +394,9 @@
 // --------------------------------------------------
 @media (max-width: 820px) and (orientation: portrait) {
   .areas-wrapper {
-    padding-top: 2.5rem;
-    padding-bottom: 3rem;
-
-    &::before {
-      font-size: 9vw;
-      right: -5%;
-    }
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
 
     &__container {
       padding: 0 28px;
@@ -273,6 +404,20 @@
 
     &__header {
       margin-bottom: 2rem;
+      gap: 2rem;
+      flex-direction: column;
+    }
+
+    &__left {
+      width: 100%;
+    }
+
+    &__right {
+      width: 100%;
+    }
+
+    &__right-title {
+      font-size: 7vw;
     }
 
     &__title {
@@ -281,6 +426,33 @@
 
     &__description {
       font-size: 0.875rem;
+      line-height: 20px;
+    }
+
+    &__search {
+      margin-bottom: 2rem;
+    }
+
+    &__search-controls {
+      gap: 0.75rem;
+    }
+
+    &__select-wrapper {
+      min-width: 180px;
+    }
+
+    &__select {
+      font-size: 0.9375rem;
+      padding: 0.625rem 0.875rem;
+      padding-right: 2.25rem;
+    }
+
+    &__search-button,
+    &__map-button {
+      min-width: 44px;
+      min-height: 44px;
+      width: 44px;
+      height: 44px;
     }
 
     &__cards {
@@ -305,12 +477,9 @@
 // --------------------------------------------------
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .areas-wrapper {
-    padding-top: 2.5rem;
-    padding-bottom: 3rem;
-
-    &::before {
-      font-size: 10vw;
-    }
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
 
     &__container {
       padding: 0 32px;
@@ -318,6 +487,7 @@
 
     &__header {
       margin-bottom: 2rem;
+      gap: 2.5rem;
     }
 
     &__title {
@@ -326,6 +496,14 @@
 
     &__description {
       font-size: 0.875rem;
+    }
+
+    &__right-title {
+      font-size: 8vw;
+    }
+
+    &__search {
+      margin-bottom: 2rem;
     }
 
     &__cards {
@@ -346,13 +524,9 @@
 // --------------------------------------------------
 @media (max-width: 768px) and (orientation: portrait) {
   .areas-wrapper {
-    padding-top: 2rem;
-    padding-bottom: 2.5rem;
-
-    &::before {
-      font-size: 8vw;
-      right: -8%;
-    }
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
 
     &__container {
       padding: 0 24px;
@@ -360,14 +534,57 @@
 
     &__header {
       margin-bottom: 2rem;
+      gap: 1.5rem;
+      flex-direction: column;
+    }
+
+    &__left {
+      width: 100%;
+    }
+
+    &__right {
+      width: 100%;
+    }
+
+    &__right-title {
+      font-size: 6vw;
     }
 
     &__title {
       font-size: 1.75rem;
+      margin-bottom: 1rem;
     }
 
     &__description {
       font-size: 0.875rem;
+      line-height: 20px;
+    }
+
+    &__search {
+      margin-bottom: 2rem;
+    }
+
+    &__search-controls {
+      gap: 0.75rem;
+    }
+
+    &__select-wrapper {
+      min-width: 160px;
+      flex: 1 1 auto;
+    }
+
+    &__select {
+      font-size: 0.9375rem;
+      padding: 0.625rem 0.875rem;
+      padding-right: 2.25rem;
+    }
+
+    &__search-button,
+    &__map-button {
+      min-width: 44px;
+      min-height: 44px;
+      width: 44px;
+      height: 44px;
     }
 
     &__cards {
@@ -392,14 +609,9 @@
 // --------------------------------------------------
 @media (max-width: 768px) {
   .areas-wrapper {
-    padding-top: 2rem;
-    padding-bottom: 2.5rem;
-
-    &::before {
-      font-size: 8vw;
-      right: -8%;
-      top: 5%;
-    }
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
 
     &__container {
       padding: 0 20px;
@@ -407,6 +619,21 @@
 
     &__header {
       margin-bottom: 2rem;
+      gap: 1.5rem;
+      flex-direction: column;
+    }
+
+    &__left {
+      width: 100%;
+    }
+
+    &__right {
+      width: 100%;
+    }
+
+    &__right-title {
+      font-size: 6vw;
+      top: 5%;
     }
 
     &__title {
@@ -419,6 +646,36 @@
       line-height: 1.5;
     }
 
+    &__search {
+      margin-bottom: 2rem;
+    }
+
+    &__search-controls {
+      gap: 0.75rem;
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    &__select-wrapper {
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    &__select {
+      width: 100%;
+      min-height: 44px;
+      font-size: 0.9375rem;
+    }
+
+    &__search-button,
+    &__map-button {
+      min-width: 44px;
+      min-height: 44px;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+
     &__cards {
       grid-template-columns: 1fr;
       gap: 1.25rem;
@@ -427,6 +684,7 @@
 
   .areas-card {
     aspect-ratio: 16 / 9;
+    max-width: 100%;
   }
 
   .areas-title {
@@ -441,14 +699,9 @@
 // --------------------------------------------------
 @media (max-width: 430px) {
   .areas-wrapper {
-    padding-top: 1.5rem;
-    padding-bottom: 2rem;
-
-    &::before {
-      font-size: 7vw;
-      right: -10%;
-      top: 3%;
-    }
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
 
     &__container {
       padding: 0 16px;
@@ -456,6 +709,7 @@
 
     &__header {
       margin-bottom: 1.5rem;
+      gap: 1rem;
     }
 
     &__title {
@@ -466,6 +720,40 @@
     &__description {
       font-size: 0.8125rem;
       line-height: 1.5;
+    }
+
+    &__right-title {
+      font-size: 5vw;
+    }
+
+    &__search {
+      margin-bottom: 1.5rem;
+    }
+
+    &__search-controls {
+      gap: 0.625rem;
+      flex-direction: column;
+    }
+
+    &__select-wrapper {
+      width: 100%;
+      min-width: 100%;
+    }
+
+    &__select {
+      width: 100%;
+      min-height: 44px;
+      font-size: 0.9375rem;
+      padding: 0.75rem 1rem;
+      padding-right: 2.5rem;
+    }
+
+    &__search-button,
+    &__map-button {
+      width: 100%;
+      min-width: 100%;
+      min-height: 44px;
+      height: 44px;
     }
 
     &__cards {
@@ -489,13 +777,9 @@
 // --------------------------------------------------
 @media (max-width: 932px) and (max-height: 430px) and (orientation: landscape) {
   .areas-wrapper {
-    padding-top: 1.5rem;
-    padding-bottom: 2rem;
-
-    &::before {
-      font-size: 6vw;
-      right: -8%;
-    }
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
 
     &__container {
       padding: 0 16px;
@@ -503,6 +787,16 @@
 
     &__header {
       margin-bottom: 1.5rem;
+      gap: 1.5rem;
+      flex-direction: row;
+    }
+
+    &__left {
+      width: 60%;
+    }
+
+    &__right {
+      width: 40%;
     }
 
     &__title {
@@ -512,6 +806,41 @@
 
     &__description {
       font-size: 0.8125rem;
+      line-height: 1.4;
+    }
+
+    &__right-title {
+      font-size: 5vw;
+    }
+
+    &__search {
+      margin-bottom: 1.5rem;
+    }
+
+    &__search-controls {
+      gap: 0.625rem;
+      flex-direction: row;
+    }
+
+    &__select-wrapper {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    &__select {
+      min-height: 44px;
+      font-size: 0.875rem;
+      padding: 0.625rem 0.875rem;
+      padding-right: 2.25rem;
+    }
+
+    &__search-button,
+    &__map-button {
+      min-width: 44px;
+      min-height: 44px;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
     }
 
     &__cards {
@@ -530,4 +859,3 @@
     left: 0.75rem;
   }
 }
-

@@ -1,163 +1,360 @@
 .footer {
-  background-color: #333;
-  color: #fff;
-  padding: 2rem 0;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 60px 0 30px;
   margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
 
   &__container {
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
-  &__content {
-    text-align: center;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
-  // --------------------------------------------------
-  // iPad Pro Portrait (1024x1366)
-  // --------------------------------------------------
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__logo-image {
+    height: 40px;
+    width: auto;
+    display: block;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Onest, sans-serif;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+
+    &:hover {
+      color: #666;
+    }
+  }
+
+  &__middle {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    font-family: Onest, sans-serif;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Onest, sans-serif;
+    transition: color 0.3s ease;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    &:hover {
+      color: #666;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__copyright {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+    font-family: Onest, sans-serif;
+  }
+
+  &__legal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__legal-link {
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: Onest, sans-serif;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #333;
+    }
+  }
+
+  &__legal-separator {
+    color: #666;
+    font-size: 12px;
+  }
+
+  // Tablet (iPad Pro Portrait, iPad Air Portrait)
   @media (max-width: 1024px) and (orientation: portrait) {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding: 50px 0 25px;
 
     &__container {
-      padding: 0 1.5rem;
+      padding: 0 52px;
+      gap: 35px;
     }
 
-    &__content {
-      font-size: 0.9375rem;
+    &__top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      padding-bottom: 25px;
+    }
+
+    &__nav {
+      gap: 24px;
+    }
+
+    &__middle {
+      grid-template-columns: 1fr;
+      gap: 30px;
     }
   }
 
-  // --------------------------------------------------
-  // iPad Pro Landscape (1366x1024)
-  // --------------------------------------------------
+  // Tablet Landscape (iPad Pro Landscape, iPad Air Landscape)
   @media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding: 50px 0 25px;
 
     &__container {
-      padding: 0 1.75rem;
+      padding: 0 52px;
+      gap: 35px;
     }
 
-    &__content {
-      font-size: 0.9375rem;
+    &__nav {
+      gap: 28px;
+    }
+
+    &__middle {
+      gap: 35px;
     }
   }
 
-  // --------------------------------------------------
-  // iPad Air Portrait (820x1180)
-  // --------------------------------------------------
-  @media (max-width: 820px) and (orientation: portrait) {
-    padding-top: 1.375rem;
-    padding-bottom: 1.375rem;
-
-    &__container {
-      padding: 0 1.25rem;
-    }
-
-    &__content {
-      font-size: 0.9375rem;
-    }
-  }
-
-  // --------------------------------------------------
-  // iPad Air Landscape (1180x820)
-  // --------------------------------------------------
-  @media (min-width: 820px) and (max-width: 1180px) and (orientation: landscape) {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-
-    &__container {
-      padding: 0 1.5rem;
-    }
-
-    &__content {
-      font-size: 0.9375rem;
-    }
-  }
-
-  // --------------------------------------------------
-  // iPad Mini Portrait (768x1024)
-  // --------------------------------------------------
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-
-    &__container {
-      padding: 0 1.25rem;
-    }
-
-    &__content {
-      font-size: 0.875rem;
-    }
-  }
-
-  // --------------------------------------------------
-  // iPad Mini Landscape (1024x768)
-  // --------------------------------------------------
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-
-    &__container {
-      padding: 0 1.25rem;
-    }
-
-    &__content {
-      font-size: 0.875rem;
-    }
-  }
-
-  // --------------------------------------------------
-  // Mobile (≤ 768px)
-  // --------------------------------------------------
+  // Mobile (iPhone)
   @media (max-width: 768px) {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+    padding: 40px 0 20px;
 
     &__container {
-      padding: 0 1rem;
+      padding: 0 24px;
+      gap: 30px;
     }
 
-    &__content {
-      font-size: 0.875rem;
+    &__top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+
+    &__nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      width: 100%;
+    }
+
+    &__nav-link {
+      font-size: 13px;
+    }
+
+    &__middle {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    &__text {
+      font-size: 13px;
+    }
+
+    &__contact-link {
+      font-size: 13px;
+    }
+
+    &__social {
+      justify-content: flex-start;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding-top: 20px;
+    }
+
+    &__copyright {
+      font-size: 11px;
+    }
+
+    &__legal {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    &__legal-link {
+      font-size: 11px;
+    }
+
+    &__legal-separator {
+      display: none;
     }
   }
 
-  // --------------------------------------------------
-  // iPhone 15 Pro Portrait (430x932)
-  // --------------------------------------------------
-  @media (max-width: 430px) {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  // Small Mobile
+  @media (max-width: 480px) {
+    padding: 30px 0 15px;
 
     &__container {
-      padding: 0 0.875rem;
+      padding: 0 16px;
+      gap: 24px;
     }
 
-    &__content {
-      font-size: 0.8125rem;
-      line-height: 1.5;
-    }
-  }
-
-  // --------------------------------------------------
-  // iPhone 15 Pro Landscape (932x430)
-  // --------------------------------------------------
-  @media (max-width: 932px) and (max-height: 430px) and (orientation: landscape) {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-
-    &__container {
-      padding: 0 0.875rem;
+    &__top {
+      gap: 16px;
+      padding-bottom: 16px;
     }
 
-    &__content {
-      font-size: 0.75rem;
-      line-height: 1.4;
+    &__logo-image {
+      height: 32px;
+    }
+
+    &__nav {
+      gap: 12px;
+    }
+
+    &__nav-link {
+      font-size: 12px;
+    }
+
+    &__middle {
+      gap: 20px;
+    }
+
+    &__text {
+      font-size: 12px;
+    }
+
+    &__contact {
+      gap: 10px;
+    }
+
+    &__contact-link {
+      font-size: 12px;
+    }
+
+    &__social-link {
+      width: 36px;
+      height: 36px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &__bottom {
+      gap: 10px;
+      padding-top: 16px;
+    }
+
+    &__copyright {
+      font-size: 10px;
+    }
+
+    &__legal-link {
+      font-size: 10px;
     }
   }
 }
-

@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import './Areas.scss'
 
 interface Area {
@@ -8,8 +7,6 @@ interface Area {
 }
 
 export const Areas = () => {
-  const { t } = useTranslation()
-
   const areas: Area[] = [
     {
       id: 1,
@@ -47,6 +44,7 @@ export const Areas = () => {
             <h2 className="areas-wrapper__right-title">Areas</h2>
           </div>
         </div>
+
         <div className="areas-wrapper__cards">
           {areas.map((area, index) => (
             <div 
