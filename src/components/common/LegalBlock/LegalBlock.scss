@@ -41,7 +41,7 @@
   &__background-text {
     position: absolute;
     top: 12%;
-    left: calc(18%);
+    left: 16%;
     transform: translateY(-50%);
     font-size: 160px;
     font-weight: 700;
@@ -222,6 +222,7 @@
 
     &__card-description {
       font-size: 13px;
+      line-height: 20px;
     }
   }
 
