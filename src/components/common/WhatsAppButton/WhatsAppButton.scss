@@ -1,0 +1,64 @@
+.whatsapp-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  cursor: pointer;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background-color: #20ba5a;
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+    transform: scale(1.1);
+
+    svg {
+      transform: scale(1.1);
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  // Адаптация для мобильных устройств
+  @media (max-width: 768px) {
+    width: 56px;
+    height: 56px;
+    bottom: 20px;
+    right: 20px;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 52px;
+    height: 52px;
+    bottom: 16px;
+    right: 16px;
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+

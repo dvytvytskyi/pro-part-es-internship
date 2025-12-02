@@ -63,8 +63,8 @@ export const AboutUs = () => {
           <div className="about-us__right">
             <div className="about-us__image-wrapper">
               <img
-                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
-                alt="About Us"
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                alt="Modern real estate property"
                 className="about-us__image"
                 loading="lazy"
                 onError={(e) => {
@@ -80,8 +80,8 @@ export const AboutUs = () => {
             </div>
             <div className="about-us__image-wrapper">
               <img
-                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
-                alt="About Us"
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+                alt="Luxury villa in Spain"
                 className="about-us__image"
                 loading="lazy"
                 onError={(e) => {

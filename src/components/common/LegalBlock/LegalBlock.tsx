@@ -54,9 +54,10 @@ export const LegalBlock = () => {
       <div className="legal-block__services-container">
         {services.map((service) => (
           <div key={service.id} className="legal-block__card">
-            <div className="legal-block__card-icon">
-              <img src={service.iconUrl} alt={service.title} />
-            </div>
+            <span 
+              className="legal-block__card-icon" 
+              style={{ backgroundImage: `url(${service.iconUrl})` }}
+            ></span>
             <h3 className="legal-block__card-title">{service.title}</h3>
             <p className="legal-block__card-description">{service.description}</p>
           </div>

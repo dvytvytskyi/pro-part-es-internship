@@ -1,9 +1,15 @@
 .footer {
   background-color: #f5f5f5;
   color: #333;
-  padding: 80px 84px 40px;
-  width: 100%;
+  padding: 40px 84px 0;
+  width: 138.89%;
+  max-width: none;
   box-sizing: border-box;
+  transform: scale(0.72);
+  transform-origin: top center;
+  margin-left: -19.44%;
+  margin-top: 10%;
+  margin-bottom: 0;
 
   &__container {
     margin: 0 auto;
@@ -113,13 +119,15 @@
   // Links Container (справа)
   &__links-container {
     display: flex;
-    gap: 105.6px;
+    gap: 115.6px;
     flex: 1;
     justify-content: flex-end;
     font-size: 18.48px;
     font-weight: 400;
     font-family: Onest, sans-serif;
     color: #717171;
+    transform: scaleX(1.3);
+    transform-origin: right center;
   }
 
   &__area-section,
@@ -129,6 +137,7 @@
     gap: 26.4px;
   }
 
+
   &__section-title {
     font-size: 21.12px;
     font-weight: 700;
@@ -137,7 +146,15 @@
     font-family: Onest, sans-serif;
   }
 
-  &__area-list,
+  &__area-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15.84px;
+  }
+
   &__services-list {
     list-style: none;
     padding: 0;
@@ -154,7 +171,7 @@
 
   &__link {
     text-decoration: none;
-    color: #717171;
+    color: #999999;
     font-size: 18.48px;
     font-weight: 400;
     font-family: Onest, sans-serif;
@@ -162,7 +179,7 @@
     line-height: 1.5;
 
     &:hover {
-      color: #666;
+      color: #888;
     }
   }
 
@@ -315,11 +332,23 @@
       flex: 1;
       gap: 50px;
       justify-content: flex-start;
+      transform: none;
     }
 
     &__area-section,
     &__services-section {
       gap: 16px;
+    }
+
+    &__area-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+    }
+
+    &__area-list li {
+      display: inline-block;
+      white-space: nowrap;
     }
 
     &__section-title {
@@ -365,6 +394,10 @@
   // --------------------------------------------------
   @media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
     padding: 50px 40px 30px;
+    width: 100%;
+    transform: none;
+    margin-left: 0;
+    margin-top: 0;
 
     &__main {
       gap: 50px;
@@ -388,6 +421,7 @@
 
     &__links-container {
       gap: 50px;
+      transform: none;
     }
 
     &__section-title {
@@ -512,6 +546,10 @@
   // --------------------------------------------------
   @media (min-width: 430px) and (max-width: 768px) and (orientation: portrait) {
     padding: 40px 28px 24px;
+    width: 100%;
+    transform: none;
+    margin-left: 0;
+    margin-top: 0;
 
     &__container {
       gap: 24px;
@@ -574,15 +612,27 @@
 
     &__links-container {
       width: 100%;
-      flex-direction: row;
-      gap: 40px;
+      flex-direction: column;
+      gap: 24px;
       justify-content: flex-start;
+      transform: none;
     }
 
     &__area-section,
     &__services-section {
-      flex: 1;
+      width: 100%;
       gap: 14px;
+    }
+
+    &__area-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+    }
+
+    &__area-list li {
+      display: inline-block;
+      white-space: nowrap;
     }
 
     &__section-title {
@@ -591,26 +641,41 @@
 
     &__link {
       font-size: 13px;
-      min-height: 44px;
+      min-height: auto;
     }
 
     &__services-columns {
-      gap: 30px;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    &__services-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+    }
+
+    &__services-list li {
+      display: inline-block;
+      white-space: nowrap;
     }
 
     &__bottom {
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
 
     &__copyright {
       font-size: 11px;
+      text-align: center;
     }
 
     &__legal-links {
       gap: 14px;
+      justify-content: center;
     }
 
     &__legal-link {
@@ -624,6 +689,10 @@
   // --------------------------------------------------
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     padding: 40px 28px 24px;
+    width: 100%;
+    transform: none;
+    margin-left: 0;
+    margin-top: 0;
 
     &__main {
       gap: 35px;
@@ -647,6 +716,7 @@
 
     &__links-container {
       gap: 35px;
+      transform: none;
     }
 
     &__section-title {
@@ -663,6 +733,10 @@
   // --------------------------------------------------
   @media (max-width: 430px) {
     padding: 32px 20px 24px;
+    width: 100%;
+    transform: none;
+    margin-left: 0;
+    margin-top: 0;
 
     &__container {
       gap: 24px;
@@ -729,15 +803,16 @@
     }
 
     &__links-container {
-      flex-direction: row;
-      gap: 30px;
+      flex-direction: column;
+      gap: 24px;
       width: 100%;
       align-items: flex-start;
+      transform: none;
     }
 
     &__area-section,
     &__services-section {
-      flex: 1;
+      width: 100%;
       gap: 12px;
     }
 
@@ -749,28 +824,32 @@
 
     &__area-list {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 12px;
     }
 
     &__area-list li {
-      display: block;
+      display: inline-block;
+      white-space: nowrap;
     }
 
     &__services-columns {
-      flex-direction: row;
-      gap: 20px;
+      flex-direction: column;
+      gap: 0;
     }
 
     &__services-list {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 12px;
       flex: 1;
     }
 
     &__services-list li {
-      display: block;
+      display: inline-block;
+      white-space: nowrap;
     }
 
     &__link {
@@ -782,21 +861,23 @@
     }
 
     &__bottom {
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
       padding-top: 20px;
       border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     &__copyright {
       font-size: 11px;
+      text-align: center;
     }
 
     &__legal-links {
       flex-direction: row;
       gap: 16px;
+      justify-content: center;
     }
 
     &__legal-link {

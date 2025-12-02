@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { Footer } from './Footer'
+import { WhatsAppButton } from '@/components/common/WhatsAppButton/WhatsAppButton'
 import './Layout.scss'
 
 interface LayoutProps {
@@ -11,6 +12,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <div className="layout">
       {children}
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }
