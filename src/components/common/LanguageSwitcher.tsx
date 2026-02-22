@@ -7,7 +7,7 @@ export const LanguageSwitcher = () => {
   const { language, changeLanguage } = useLanguage()
 
   const toggleLanguage = () => {
-    const newLanguage = language === 'en' ? 'ru' : 'en'
+    const newLanguage = language === 'en' ? 'ua' : 'en'
     changeLanguage(newLanguage)
   }
 
@@ -16,6 +16,7 @@ export const LanguageSwitcher = () => {
       onClick={toggleLanguage}
       className="language-switcher"
       aria-label={t('common.language')}
+      type="button"
     >
       {language.toUpperCase()}
     </button>

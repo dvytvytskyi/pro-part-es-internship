@@ -11,22 +11,22 @@ export const Areas = () => {
     {
       id: 1,
       title: 'Marbella',
-      image: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&h=600&fit=crop'
+      image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=70'
     },
     {
       id: 2,
       title: 'Benahavis',
-      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop'
+      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=700&q=70'
     },
     {
       id: 3,
       title: 'Mijas',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop'
+      image: 'https://images.unsplash.com/photo-1502672023488-70e25813eb80?auto=format&fit=crop&w=700&q=70'
     },
     {
       id: 4,
       title: 'Ojen',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop'
+      image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=700&q=70'
     }
   ]
 
@@ -56,6 +56,10 @@ export const Areas = () => {
                 alt={area.title} 
                 className="areas-image"
                 loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement
+                  target.style.display = 'none'
+                }}
               />
               <div className="areas-card__overlay"></div>
               <h3 className="areas-title">{area.title}</h3>

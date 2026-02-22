@@ -1,29 +1,29 @@
 export interface Property {
   id: string
   title: string
-  description: string
+  description?: string
   price: number
-  type: PropertyType
+  type?: PropertyType
   location: Location
   bedrooms: number
   bathrooms: number
   area: number
   images: string[]
-  features: string[]
+  features?: string[]
   status: PropertyStatus
-  createdAt: string
-  updatedAt: string
+  createdAt?: string
+  updatedAt?: string
 }
 
 export type PropertyType = 'apartment' | 'house' | 'villa' | 'commercial'
 
-export type PropertyStatus = 'available' | 'sold' | 'rented' | 'pending'
+export type PropertyStatus = 'available' | 'sold' | 'rented' | 'pending' | 'new' | 'resale' | 'rent'
 
 export interface Location {
   address: string
-  city: string
-  country: string
-  coordinates: {
+  city?: string
+  country?: string
+  coordinates?: {
     lat: number
     lng: number
   }

@@ -1,0 +1,45 @@
+{
+  "common": {
+    "language": "Мова",
+    "search": "Пошук",
+    "filter": "Фільтр",
+    "apply": "Застосувати",
+    "reset": "Скинути",
+    "loading": "Завантаження...",
+    "error": "Помилка",
+    "noResults": "Нічого не знайдено",
+    "back": "Назад",
+    "next": "Далі",
+    "previous": "Попередня"
+  },
+  "navigation": {
+    "home": "Головна",
+    "newBuilding": "Новобудови",
+    "secondary": "Вторинна",
+    "rent": "Оренда",
+    "map": "Карта",
+    "areas": "Райони",
+    "consulting": "Консультації",
+    "blog": "Блог"
+  },
+  "header": {
+    "callUs": "Подзвонити",
+    "favorites": "Обране"
+  },
+  "hero": {
+    "title": "Найкраща нерухомість на Коста-дель-Соль",
+    "description": "Знайдіть свій дім разом з ProPart",
+    "selectArea": "Оберіть район",
+    "offPlan": "Новобудови",
+    "secondary": "Вторинна",
+    "rent": "Оренда",
+    "search": "Шукати",
+    "viewMap": "Переглянути карту"
+  },
+  "getInTouch": {
+    "title": "Звʼяжіться з нами",
+    "description": "Організуйте зустріч у Google Meet з нашим агентом",
+    "button": "До календаря"
+  }
+}
+

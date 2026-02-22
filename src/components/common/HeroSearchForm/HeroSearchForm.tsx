@@ -1,12 +1,15 @@
 import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 import './HeroSearchForm.scss'
 
 export const HeroSearchForm = () => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const [selectedArea, setSelectedArea] = useState('')
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [propertyType, setPropertyType] = useState('off-plan')
+  const [propertyType, setPropertyType] = useState<'off-plan' | 'secondary' | 'rent'>('off-plan')
+  const [error, setError] = useState('')
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const areas = [
@@ -36,11 +39,32 @@ export const HeroSearchForm = () => {
     }
   }, [])
 
+  const handleSearch = () => {
+    if (!selectedArea) {
+      setError('Please select an area first')
+      return
+    }
+
+    setError('')
+
+    if (propertyType === 'off-plan') {
+      navigate('/new-building')
+    } else if (propertyType === 'secondary') {
+      navigate('/secondary')
+    } else {
+      navigate('/rent')
+    }
+  }
+
+  const handleMapClick = () => {
+    navigate('/map')
+  }
+
   return (
     <div className="hero-search-form">
       <div className="hero-search-form__select-wrapper" ref={dropdownRef}>
         <button
-          className="hero-search-form__select"
+          className={`hero-search-form__select ${error ? 'hero-search-form__select--error' : ''}`}
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           type="button"
         >
@@ -76,6 +100,7 @@ export const HeroSearchForm = () => {
                   onClick={() => {
                     setSelectedArea(area)
                     setIsDropdownOpen(false)
+                    setError('')
                   }}
                   type="button"
                 >
@@ -101,6 +126,7 @@ export const HeroSearchForm = () => {
             </div>
           </div>
         )}
+        {error && <p className="hero-search-form__error">{error}</p>}
       </div>
 
       <div className="hero-search-form__property-types">
@@ -109,6 +135,7 @@ export const HeroSearchForm = () => {
             propertyType === 'off-plan' ? 'hero-search-form__property-type--active' : ''
           }`}
           onClick={() => setPropertyType('off-plan')}
+          type="button"
         >
           {t('hero.offPlan', 'Off plan')}
         </button>
@@ -117,6 +144,7 @@ export const HeroSearchForm = () => {
             propertyType === 'secondary' ? 'hero-search-form__property-type--active' : ''
           }`}
           onClick={() => setPropertyType('secondary')}
+          type="button"
         >
           {t('hero.secondary', 'Secondary')}
         </button>
@@ -125,13 +153,19 @@ export const HeroSearchForm = () => {
             propertyType === 'rent' ? 'hero-search-form__property-type--active' : ''
           }`}
           onClick={() => setPropertyType('rent')}
+          type="button"
         >
           {t('hero.rent', 'Rent')}
         </button>
       </div>
 
       <div className="hero-search-form__actions">
-        <button className="hero-search-form__search-button" aria-label={t('hero.search', 'Search')}>
+        <button
+          className="hero-search-form__search-button"
+          aria-label={t('hero.search', 'Search')}
+          type="button"
+          onClick={handleSearch}
+        >
           <svg
             className="hero-search-form__search-icon"
             width="20"
@@ -159,7 +193,12 @@ export const HeroSearchForm = () => {
           </svg>
           <span className="hero-search-form__search-text">{t('hero.search', 'Search')}</span>
         </button>
-        <button className="hero-search-form__map-button" aria-label={t('hero.viewMap', 'View Map')}>
+        <button
+          className="hero-search-form__map-button"
+          aria-label={t('hero.viewMap', 'View Map')}
+          type="button"
+          onClick={handleMapClick}
+        >
           <svg
             width="20"
             height="20"
@@ -189,4 +228,3 @@ export const HeroSearchForm = () => {
     </div>
   )
 }
-
